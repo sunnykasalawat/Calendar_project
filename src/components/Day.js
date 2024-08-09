@@ -26,7 +26,7 @@ export default function Day({ day, rowIdx }) {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/events');
+      const response = await fetch('https://calendar-backend-1.onrender.com:5000/api/events');
       const data = await response.json();
       if (Array.isArray(data)) {
         setEvents(data);
@@ -42,7 +42,7 @@ export default function Day({ day, rowIdx }) {
 
   const fetchHolidays = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/holidays');
+      const response = await fetch('https://calendar-backend-1.onrender.com:5000/api/holidays');
       const data = await response.json();
       if (Array.isArray(data)) {
         setHolidays(data);

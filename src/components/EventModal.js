@@ -27,8 +27,8 @@ export default function EventModal() {
 
     const method = selectedEvent && selectedEvent.sn ? 'PUT' : 'POST';
     const url = method === 'PUT'
-      ? `http://127.0.0.1:5000/api/events/${selectedEvent.sn}`
-      : 'http://127.0.0.1:5000/api/events';
+      ? `https://calendar-backend-1.onrender.com:5000/api/events/${selectedEvent.sn}`
+      : 'https://calendar-backend-1.onrender.com:5000/api/events';
 
     try {
       const response = await fetch(url, {
@@ -67,7 +67,7 @@ export default function EventModal() {
     if (!selectedEvent || !selectedEvent.sn) return;
 
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/events/${selectedEvent.sn}`, {
+      const response = await fetch(`https://calendar-backend-1.onrender.com:5000/api/events/${selectedEvent.sn}`, {
         method: 'DELETE',
       });
 
