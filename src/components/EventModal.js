@@ -151,16 +151,20 @@ export default function EventModal() {
               min={today}
               required
             />
+            <div>
+          <label htmlFor="emails" className="block text-gray-600 font-semibold mb-1">
+            Emails
+          </label>           
             <ReactMultiEmail
               emails={emails}
               onChange={setEmails}
               autoFocus={focused}
-              className="border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500"
+              className='pt-3 border-0 text-gray-600 text-sm pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500' 
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
               getLabel={(email, index, removeEmail) => {
                 return (
-                  <div data-tag key={index} className="border-0 text-gray-600 pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:border-blue-500">
+                  <div data-tag key={index}>
                     {email}
                     <span data-tag-handle onClick={() => removeEmail(index)}>
                       ×
@@ -169,6 +173,7 @@ export default function EventModal() {
                 );
               }}
             />
+            </div>
           </div>
         </div>
         <footer className="flex justify-end border-t p-3 mt-5">
